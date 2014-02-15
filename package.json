@@ -1,13 +1,20 @@
 {
-  "name": "application-name",
-  "version": "0.0.1",
+  "name": "WebChat",
+  "version": "1.0.0",
+  "author": "Ankur Patel",
+  "homepage": "https://github.com/ankurp/WebChat",
   "private": true,
   "scripts": {
-    "start": "node app.js"
+    "start": "coffee app.coffee"
   },
   "dependencies": {
     "express": "3.4.2",
     "jade": "*",
-    "stylus": "*"
-  }
+    "stylus": "*",
+    "coffee-script": "~1.7.1"
+  },
+  "repositories": [{ 
+    "type": "git",
+    "url": "git://github.com/ankurp/WebChat.git" 
+  }]
 }
