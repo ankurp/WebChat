@@ -27,8 +27,6 @@
     if (room) webrtc.joinRoom(room);
   });
 
-  document.ad
-
   // Since we use this twice we put it here
   function setRoom(name) {
     $('form #roomName').prop('disabled', true);
