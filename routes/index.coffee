@@ -4,6 +4,6 @@
 # 
 exports.index = (req, res) ->
   res.render "index",
-    title: "New"
+    title: req.query.room || "New Room"
 
   return

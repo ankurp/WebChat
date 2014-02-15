@@ -1,5 +1,15 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  form
+    input#roomName(placeholder="Enter video conference room name", autofocus=true)
+  div#remotesVideos 
+    div Others
+    video#placeholder(poster="/images/loading.gif")
+  div#localVideoContainer You
+    video#localVideo(height="300", poster="/images/loading.gif")
+  
+
+  script(src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js")
+  script(src="http://simplewebrtc.com/latest.js")
+  script(src="javascripts/index.js")
