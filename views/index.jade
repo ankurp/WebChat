@@ -2,7 +2,10 @@ extends layout
 
 block content
   form
-    input#roomName(placeholder="Enter video conference room name", autofocus=true)
+    if title == "New Room"
+      input#roomName(placeholder="Enter video conference room name", autofocus=true)
+    else
+      input#roomName(value="Share this link: " + url, disabled=true, placeholder="Enter video conference room name")
   div#remotesVideos 
     div Others
     video#placeholder(poster="/images/loading.gif")
@@ -12,4 +15,4 @@ block content
 
   script(src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js")
   script(src="http://simplewebrtc.com/latest.js")
-  script(src="javascripts/index.js")
+  script(src="index.js")

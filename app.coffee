@@ -2,11 +2,12 @@
 ###
 Module dependencies.
 ###
-express = require("express")
-routes = require("./routes")
-user = require("./routes/user")
-http = require("http")
-path = require("path")
+express = require "express"
+routes = require "./routes"
+http = require "http"
+path = require "path"
+fs = require "fs"
+coffee = require "coffee-script"
 app = express()
 
 # all environments
@@ -21,10 +22,20 @@ app.use app.router
 app.use require("stylus").middleware(path.join(__dirname, "public"))
 app.use express.static(path.join(__dirname, "public"))
 
+app.get '/:script.js', (req, res) ->
+  res.header 'Content-Type', 'application/x-javascript'
+  cs = fs.readFileSync "#{__dirname}/client/assets/coffee/#{req.params.script}.coffee", "ascii"
+  js = coffee.compile cs
+  res.send js
+
 # development only
 app.use express.errorHandler()  if "development" is app.get("env")
 app.get "/", routes.index
-app.get "/users", user.list
+app.get '/:roomname', (req, res) ->
+  res.render "index",
+    title: req.params.roomname,
+    url: "http://#{req.headers.host}/#{req.params.roomname}"
+
 http.createServer(app).listen app.get("port"), ->
   console.log "Express server listening on port " + app.get("port")
   return
