@@ -10,6 +10,7 @@
       )
       webrtc.on "videoAdded", ->
         $("video#placeholder").hide()
+        $('body').chardinJs('stop')
         return
 
       webrtc.on "videoRemoved", ->
