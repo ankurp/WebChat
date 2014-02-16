@@ -30,7 +30,7 @@
       false
   # end if window.webkitRTCPeerConnection
   else
-    alert "Currently only Chrome browser is supported for Video Conferencing without installing any Plugins or using Adobe Flash. It is using WebRTC for realtime video."
+    alert "Currently only Chrome browser is supported.\n\nPlease open in Google Chrome to quickly video chat with friends without installing any plugins and without logging in or creating any accounts."
 
   return
 )()
