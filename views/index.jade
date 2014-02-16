@@ -2,30 +2,27 @@ extends layout
 
 block content
   if title != "New Room"
-    div.tutorial-placeholder(data-intro="Allow video", data-position="bottom")
+    div.tutorial-placeholder(data-intro="Allow", data-position="bottom")
   h1 Quickly Video Chat
   div.subtitle No Login and No Installing
   form
     if title == "New Room"
       input#roomName(placeholder="Enter a chat room name", autofocus=true, data-intro="Enter a room name to start", data-position="top", autocomplete="off")
     else
-      input#roomName(value="Share this link: " + url, disabled=true, placeholder="Enter a chat room name to start", data-intro="Share this URL with friends to start video chatting. Multiple people can join.", data-position="top", autocomplete="off")
+      input#roomName(style="text-align:center;", value=url, disabled=true, placeholder="Enter a chat room name to start", data-intro="Share this URL with friends to start video chatting. Multiple people can join.", data-position="top", autocomplete="off")
 
       div#remotesVideos 
         div YOUR FRIENDS
-        if title == "New Room"
-          video#placeholder(poster="/images/loading.gif", data-intro="Video of people on the other side of the connection", data-position="right")
-        else
-          video#placeholder(poster="/images/loading.gif", data-intro="Video of your friends who have this page open: " + url, data-position="right")
+        video#placeholder(poster="/images/loading.gif", data-intro="Video of your friends", data-position="right")
       div#localVideoContainer YOU
-        video#localVideo(poster="/images/loading.gif", data-intro="Video of you once you allow the use of Camera and Microphone by your browser" data-position="right")
+        video#localVideo(poster="/images/loading.gif", data-intro="Video of you once you allow the use of Camera and Microphone" data-position="right")
       footer
         hr
-        div
-          p Created by 
-            a(href="http://www.twitter.com/AnkurPatel") ankur
-            span &nbsp;at&nbsp;
-            a(href="http://www.encoredevlabs.com") EncoreDevLabs.com
+        span(data-intro="Author", data-position="right")
+          span Created by 
+          a(href="http://www.twitter.com/AnkurPatel") ankur
+          span &nbsp;at&nbsp;
+          a(href="http://www.encoredevlabs.com") EncoreDevLabs.com
 
     script(src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js")
     script(src="http://simplewebrtc.com/latest.js")

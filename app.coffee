@@ -34,7 +34,7 @@ app.get "/", routes.index
 app.get '/:roomname', (req, res) ->
   res.render "index",
     title: req.params.roomname,
-    url: "http://#{req.headers.host}/#{req.params.roomname}"
+    url: "#{req.headers.host.replace(/www./, '')}/#{req.params.roomname}"
 
 http.createServer(app).listen app.get("port"), ->
   console.log "Express server listening on port " + app.get("port")
