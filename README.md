@@ -15,3 +15,6 @@ You will also need to install `coffee` command using `npm` using global `-g` fla
 Then once it is install you can run using the following command
 
   `foreman start`
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/ankurp/webchat/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
