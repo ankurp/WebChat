@@ -5,26 +5,29 @@ block content
     div.tutorial-placeholder(data-intro="Allow", data-position="bottom")
   h1 Quickly Video Chat
   div.subtitle No Login and No Installing
-  form
-    if title == "New Room"
+  a(href="https://github.com/ankurp/WebChat")
+    img(style="position: absolute; top: 0; right: 0; border: 0;", src="https://github-camo.global.ssl.fastly.net/365986a132ccd6a44c23a9169022c0b5c890c387/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67", alt="Fork me on GitHub", data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png")
+  if title == "New Room"
+    form
       input#roomName(placeholder="Enter a chat room name", autofocus=true, data-intro="Enter a room name to start", data-position="top", autocomplete="off")
-    else
+  else
+    form
       input#roomName(style="text-align:center;", value=url, disabled=true, placeholder="Enter a chat room name to start", data-intro="Share this URL with friends to start video chatting. Multiple people can join.", data-position="top", autocomplete="off")
 
-      div#remotesVideos 
-        div YOUR FRIENDS
-        video#placeholder(poster="/images/loading.gif", data-intro="Video of your friends", data-position="right")
-      div#localVideoContainer YOU
-        video#localVideo(poster="/images/loading.gif", data-intro="Video of you once you allow the use of Camera and Microphone" data-position="right")
-      footer
-        hr
-        span(data-intro="Author", data-position="right")
-          span Created by 
-          a(href="http://www.twitter.com/AnkurPatel") ankur
-          span &nbsp;at&nbsp;
-          a(href="http://www.encoredevlabs.com") EncoreDevLabs.com
+    div#remotesVideos 
+      div YOUR FRIENDS
+      video#placeholder(poster="/images/loading.gif", data-intro="Video of your friends", data-position="right")
+    div#localVideoContainer YOU
+      video#localVideo(poster="/images/loading.gif", data-intro="Video of you once you allow the use of Camera and Microphone" data-position="right")
+    footer
+      hr
+      span(data-intro="Author", data-position="right")
+        span Created by 
+        a(href="http://www.twitter.com/AnkurPatel") ankur
+        span &nbsp;at&nbsp;
+        a(href="http://www.encoredevlabs.com") EncoreDevLabs.com
 
-    script(src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js")
-    script(src="http://simplewebrtc.com/latest.js")
-    script(src="chardin.js")
-    script(src="index.js")
+  script(src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js")
+  script(src="http://simplewebrtc.com/latest.js")
+  script(src="chardin.js")
+  script(src="index.js")
