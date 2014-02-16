@@ -1,18 +1,31 @@
 extends layout
 
 block content
+  if title != "New Room"
+    div.tutorial-placeholder(data-intro="Allow video", data-position="bottom")
+  h1 Quickly Video Chat
+  div.subtitle No Login and No Installing
   form
     if title == "New Room"
-      input#roomName(placeholder="Enter video conference room name", autofocus=true)
+      input#roomName(placeholder="Enter a chat room name", autofocus=true, data-intro="Enter a room name to start", data-position="top", autocomplete="off")
     else
-      input#roomName(value="Share this link: " + url, disabled=true, placeholder="Enter video conference room name")
-  div#remotesVideos 
-    div Others
-    video#placeholder(poster="/images/loading.gif")
-  div#localVideoContainer You
-    video#localVideo(height="300", poster="/images/loading.gif")
-  
+      input#roomName(value="Share this link: " + url, disabled=true, placeholder="Enter a chat room name to start", data-intro="Share this URL with friends to start video chatting. Multiple people can join.", data-position="top", autocomplete="off")
 
-  script(src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js")
-  script(src="http://simplewebrtc.com/latest.js")
-  script(src="index.js")
+      div#remotesVideos 
+        div YOUR FRIENDS
+        if title == "New Room"
+          video#placeholder(poster="/images/loading.gif", data-intro="Video of people on the other side of the connection", data-position="right")
+        else
+          video#placeholder(poster="/images/loading.gif", data-intro="Video of your friends who have this page open: " + url, data-position="right")
+      div#localVideoContainer YOU
+        video#localVideo(poster="/images/loading.gif", data-intro="Video of you once you allow the use of Camera and Microphone by your browser" data-position="right")
+      footer
+        hr
+        div
+          p Created by 
+            a(href="http://www.encoredevlabs.com") Encore Dev Labs
+
+    script(src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js")
+    script(src="http://simplewebrtc.com/latest.js")
+    script(src="chardin.js")
+    script(src="index.js")

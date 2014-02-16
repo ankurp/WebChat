@@ -1,6 +1,5 @@
 body {
-  padding: 0 10px;
-  font: 14px Helvetica Neue, Arial, sans-serif;
+  font: 16px Helvetica Neue, Arial, sans-serif;
   font-weight: lighter;
   background: #262626;
   color: #fff;
@@ -9,10 +8,25 @@ body h1 {
   text-align: center;
   font-weight: 100;
   font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  margin: 30px 0 0;
+  font-size: 42px;
+}
+body .subtitle {
+  text-align: center;
+  font-weight: 100;
+  text-transform: uppercase;
   margin-bottom: 10px;
+  font-size: 16px;
 }
 a {
   color: #00b7ff;
+}
+.tutorial-placeholder {
+  position: absolute;
+  height: 0;
+  width: 50px;
+  top: 0;
+  right: 35px;
 }
 #remotesVideos {
   margin-bottom: 50px;
@@ -29,8 +43,7 @@ a {
   text-align: center;
 }
 #localVideoContainer #localVideo {
-  height: 242px;
-  width: 320px;
+  height: 180px;
   border: 2px solid #777;
   margin: 10px auto 50px auto;
   display: block;
@@ -43,4 +56,11 @@ a {
   outline: none;
   background: inherit;
   border: 0;
+}
+hr {
+  border: solid #555;
+  border-width: 1px 0 0;
+  clear: both;
+  margin: 1.25em 0 1.1875em;
+  height: 0;
 }
