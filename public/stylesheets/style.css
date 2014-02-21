@@ -11,6 +11,16 @@ body h1 {
   margin: 30px 0 0;
   font-size: 42px;
 }
+body a {
+  color: #00b7ff;
+}
+body hr {
+  border: solid #555;
+  border-width: 1px 0 0;
+  clear: both;
+  margin: 1.25em 0 1.1875em;
+  height: 0;
+}
 body .subtitle {
   text-align: center;
   font-weight: 100;
@@ -18,37 +28,34 @@ body .subtitle {
   margin-bottom: 10px;
   font-size: 16px;
 }
-a {
-  color: #00b7ff;
-}
-.tutorial-placeholder {
+body .tutorial-placeholder {
   position: absolute;
   height: 0;
   width: 50px;
   top: 0;
   right: 35px;
 }
-#remotesVideos {
+body #remotesVideos {
   margin-bottom: 50px;
   height: 300px;
   text-align: center;
 }
-#remotesVideos video {
+body #remotesVideos video {
   height: 300px;
   border: 2px solid #777;
   display: inline-block;
   margin: 10px 10px 0 10px;
 }
-#localVideoContainer {
+body #localVideoContainer {
   text-align: center;
 }
-#localVideoContainer #localVideo {
+body #localVideoContainer #localVideo {
   height: 180px;
   border: 2px solid #777;
   margin: 10px auto 50px auto;
   display: block;
 }
-#roomName {
+body #roomName {
   padding: 10px 0 20px 0;
   color: #efefef;
   font-size: 2.15em;
@@ -57,10 +64,9 @@ a {
   background: inherit;
   border: 0;
 }
-hr {
-  border: solid #555;
-  border-width: 1px 0 0;
-  clear: both;
-  margin: 1.25em 0 1.1875em;
-  height: 0;
+body .room-link {
+  text-align: center;
+  font-size: 34px;
+  margin: 2px 0;
+  padding: 10px 0 20px 0;
 }
