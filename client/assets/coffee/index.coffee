@@ -28,7 +28,7 @@
       false
   # end if window.webkitRTCPeerConnection
   else
-    alert "Currently only Chrome browser is supported.\n\nPlease open in Google Chrome to quickly video chat with friends without installing any plugins and without logging in or creating any accounts."
+    alert "This website currently works only Chrome browser.\n\nPlease open in Google Chrome to quickly video chat with friends without installing any plugins and without logging in or creating any accounts."
 
   return
 )()
